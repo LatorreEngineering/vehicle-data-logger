@@ -1,0 +1,35 @@
+# =====================================================
+# Vehicle Data Logger Configuration
+# EB corbos Linux | OBD-II / CAN Data Collection
+# =====================================================
+
+# --- General Settings ---
+log_interval: 1              # Time (in seconds) between each data read
+output_format: csv           # Options: 'csv' or 'json'
+log_directory: logs          # Where to save log files
+
+# --- Connection Settings ---
+connection:
+  interface: auto            # Options: 'auto', 'usb', 'bluetooth', 'socket'
+  port: /dev/ttyUSB0         # Used if interface != auto
+  baudrate: 38400            # Default OBD-II baud rate
+  timeout: 2                 # Connection timeout in seconds
+
+# --- Parameters to Log ---
+parameters:
+  speed_kph: SPEED
+  rpm: RPM
+  fuel_level_percent: FUEL_LEVEL
+  coolant_temp_c: COOLANT_TEMP
+  throttle_pos_percent: THROTTLE_POS
+
+# --- Visualization Settings ---
+visualization:
+  refresh_rate_ms: 2000      # Update interval for live plot (in milliseconds)
+  show_fuel_level: true      # Include fuel level on plot
+
+# --- Remote Logging (optional) ---
+remote_logging:
+  enabled: false
+  server_url: "https://example.com/upload"
+  api_key: "YOUR_API_KEY_HERE"
