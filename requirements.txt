@@ -1,0 +1,11 @@
+# Vehicle Data Logger dependencies
+
+# OBD-II communication
+obd==0.7.2
+
+# Data handling and visualization
+pandas>=2.2.0
+matplotlib>=3.8.0
+
+# Optional utilities
+pyyaml>=6.0
